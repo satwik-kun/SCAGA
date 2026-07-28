@@ -1,0 +1,25 @@
+# machine_config.yaml
+# ==============================================================================
+# MACHINE-SPECIFIC CONFIGURATION
+# Modify this file ONLY when deploying on a new machine or moving dataset directories.
+# Nothing experiment-specific or algorithmic belongs here.
+# ==============================================================================
+
+# Root directory where processed dataset folders (e.g. LUNA16/meta_info.json) are placed.
+# Path can be absolute or relative to this configuration file's directory.
+dataset_root: "./Preprocessing/data"
+
+# Directory where future experiment weights, logs, and evaluation CSVs will be saved.
+output_root: "./outputs"
+
+# Directory where future extracted edges, importance atlases, and sampled Gaussian coordinates are generated.
+generated_dir: "./generated"
+
+# Temporary cache and intermediate working directory for large scale pre-computations.
+temporary_directory: "./tmp"
+
+# Number of CPU workers for PyTorch DataLoaders (adjust based on CPU core counts).
+num_workers: 2
+
+# Target hardware accelerator compute device (e.g. "cuda:0", "cuda", or "cpu").
+device: "cuda:0"

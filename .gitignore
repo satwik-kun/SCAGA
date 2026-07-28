@@ -1,0 +1,117 @@
+# ==========================================================
+# SCAGA Repository - Git Ignore
+# ==========================================================
+
+# ==========================================================
+# Raw & Processed Datasets
+# ==========================================================
+Preprocessing/data/
+
+# ==========================================================
+# Generated Outputs (Development)
+# ==========================================================
+generated/
+generated_archive/
+outputs/
+logs/
+checkpoints/
+tmp/
+
+# ==========================================================
+# Historical Backups & Diagnostics
+# ==========================================================
+SCAGA/archive/
+SCAGA/backups/
+
+# ==========================================================
+# Frozen Experiment Runtime Outputs
+# (Keep source code, ignore generated logs/checkpoints)
+# ==========================================================
+SCAGA/WeightedSum_SCAGA/logs/
+SCAGA/SRAL_SCAGA/logs/
+
+# ==========================================================
+# TotalSegmentator Generated Outputs
+# ==========================================================
+TotalSegmentator/edges/
+TotalSegmentator/visualizations/
+
+# Generated atlases
+TotalSegmentator/*.nii.gz
+
+# Generated sampled points
+TotalSegmentator/*.npy
+
+# ==========================================================
+# SCAGA Development Generated Artifacts
+# (Users regenerate these via preprocessing)
+# ==========================================================
+SCAGA/datasets/*.nii.gz
+SCAGA/datasets/*.npy
+
+# ==========================================================
+# Frozen Snapshot Generated Artifacts
+# (Users regenerate them themselves)
+# ==========================================================
+SCAGA/WeightedSum_SCAGA/datasets/*.nii.gz
+SCAGA/WeightedSum_SCAGA/datasets/*.npy
+
+SCAGA/SRAL_SCAGA/datasets/*.nii.gz
+SCAGA/SRAL_SCAGA/datasets/*.npy
+
+# ==========================================================
+# Model Checkpoints
+# ==========================================================
+*.pth
+
+# ==========================================================
+# TensorBoard
+# ==========================================================
+events.out.tfevents*
+
+# ==========================================================
+# Python
+# ==========================================================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*$py.class
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Virtual Environments
+.env
+.venv/
+venv/
+env/
+
+# ==========================================================
+# Coverage
+# ==========================================================
+.coverage
+htmlcov/
+
+# ==========================================================
+# IDE
+# ==========================================================
+.vscode/
+.vs/
+.idea/
+
+# ==========================================================
+# Operating System Files
+# ==========================================================
+.DS_Store
+Thumbs.db
+Desktop.ini
+.AppleDouble
+.LSOverride
+
+# ==========================================================
+# Logs & Temporary Files
+# ==========================================================
+*.log
+*.tmp
+*.bak
+

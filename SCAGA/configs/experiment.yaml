@@ -1,0 +1,42 @@
+# experiment.yaml
+# ==============================================================================
+# EXPERIMENT CONFIGURATION
+# Experiment-specific hyperparameters and configuration for active development.
+# ==============================================================================
+
+experiment_name: "SCAGA_development"
+
+loss:
+  loss_type: "saturated_residual"   # Choices: mse, importance, residual, saturated_residual
+  lambda_importance: 1.0            # Weight factor for residual/importance awareness
+  alpha: 0.8                        # Guided sampling vs uniform sampling ratio
+
+initialization:
+  points_file: "sampled_points_weighted_sum.npy"
+  atlas_file: "importance_score_weighted_sum.nii.gz"
+  gs_res: 12                        # Resolution of Gaussian initialization (12^3 = 1728 points)
+
+training:
+  epochs: 400
+  batch_size: 1
+  lr: 0.01
+  weight_decay: 0.001
+  lr_decay: 0.001
+  views: 10
+  view_offset: 0
+  random_views: false
+  checkpoint_interval: 10
+  eval_interval: 10
+  seed: 42
+
+model:
+  image_encoder:
+    out_ch: 128
+  point_decoder:
+    mlp_chs: [256, 64, 16, 1]
+  gs:
+    t: 512
+    res: 12
+    p_dist_scaling: 1.0
+    o_scaling: 1.0
+    s_scaling: 0.3
